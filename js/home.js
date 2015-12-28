@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function(){
     var pMaterial = new THREE.PointsMaterial({
       color: 0xFFFFFF,
       size: 1,//点的大小
-      sizeAttenuation: true,
+      sizeAttenuation: false,
       alphaTest: 0.3,
       transparent: true,
       blending: THREE.AdditiveBlending
