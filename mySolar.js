@@ -1,34 +1,4 @@
-var x,y,z,o;
-for(var i=0;i<=200;i++){
-  x=Math.random();
-  y=Math.random();
-  z=Math.random();
-  z=z.toFixed(2);
-  x=x*490-245;
-  if(x*x>160*160){
-    y=y*Math.sqrt(245*245-x*x);
-  }else{
-    y=y*(Math.sqrt(245*245-x*x)-Math.sqrt(160*160-x*x))+Math.sqrt(160*160-x*x);
-  }
-  x=Math.floor(x);
-  y=Math.floor(y);
-  o=o+x+"px "+y+"px "+"0 -149px rgba(255,255,255,"+z+"),";
-  o=o+x+"px -"+y+"px "+"0 -149px rgba(255,255,255,"+z+"),";
-}
 
-// console.log(o);
-// $(document).ready(function(){
-//   $(".earth").mouseenter(function(){
-//     $(this).children().addClass("active");
-//   });
-//   $(".earth").mouseleave(function(){
-//     $(this).children().removeClass("active");
-//   });
-//   $(".content").mouseenter(function(){
-//     $(this).removeClass("active");
-//   });
-//   console.log(1);
-// });
 $(document).ready(function(){
 
   var univese = {
@@ -52,13 +22,7 @@ $(document).ready(function(){
     $(this).next().removeClass("active")
   })
 
-  //底部作者信息鼠标的响应
-  $('#author').mouseenter(function(){
-    $('.footer-content').slideDown()
-  })
-  $('#author').mouseleave(function(){
-    $('.footer-content').slideUp()
-  })
+
 
   $('body').click(function(){
     hideBigStar();
@@ -74,156 +38,156 @@ $(document).ready(function(){
     e.stopPropagation();
   })
 
-  $('.sun').click(function(){
+  // $('.sun').click(function(){
 
-    if (univese.contentOpen == false) {
-      hideBigStar();
-      eclipse();
-      $(this).addClass("active");
-      $('#sun_content').addClass("active");
-      $('.solar-syst').addClass("active");
-      $('.sun-bg').addClass("active");
-      stateUpdate();
-      event.stopPropagation();
-    }else{
-      hideBigStar();
-      uneclipse();
-      stateUpdate();
-    }
-    console.log(univese.contentOpen);
+  //   if (univese.contentOpen == false) {
+  //     hideBigStar();
+  //     eclipse();
+  //     $(this).addClass("active");
+  //     $('#sun_content').addClass("active");
+  //     $('.solar-syst').addClass("active");
+  //     $('.sun-bg').addClass("active");
+  //     stateUpdate();
+  //     event.stopPropagation();
+  //   }else{
+  //     hideBigStar();
+  //     uneclipse();
+  //     stateUpdate();
+  //   }
+  //   console.log(univese.contentOpen);
     
-  })
-  $('.mercury').click(function(){
-    if (univese.contentOpen == false) {
-      hideBigStar();
-      eclipse();
-      $(this).addClass("active");
-      $('#mercury_content').addClass("active");
-      $('.solar-syst').addClass("active");
-      $('.mercury-bg').addClass("active");
-      stateUpdate();
-      event.stopPropagation();
-    }else{
-      stateUpdate();
-      hideBigStar();
-      uneclipse();
-    }
-  })
-  $('.venus').click(function(){
-    if (univese.contentOpen == false) {
-      hideBigStar();
-      eclipse();
-      $(this).addClass("active");
-      $('#venus_content').addClass("active");
-      $('.solar-syst').addClass("active");
-      $('.venus-bg').addClass("active");
-       stateUpdate();
-      event.stopPropagation();
-    }
-    else{
-      stateUpdate();
-      hideBigStar();
-      uneclipse();
-    }
-  })
-  $('.earth').click(function(){
-    if (univese.contentOpen == false) {
-      hideBigStar();
-      eclipse();
-      $(this).addClass("active");
-      $('#earth_content').addClass("active");
-      $('.solar-syst').addClass("active");
-      $('.earth-bg').addClass("active");
-       stateUpdate();
-      event.stopPropagation();
-    }
-    else{
-      stateUpdate();
-      hideBigStar();
-      uneclipse();
-    }
-  })
-  $('.mars').click(function(){
-    if (univese.contentOpen == false) {
-      hideBigStar();
-      eclipse();
-      $(this).addClass("active");
-      $('#mars_content').addClass("active");
-      $('.solar-syst').addClass("active");
-      $('.mars-bg').addClass("active");
-       stateUpdate();
-      event.stopPropagation();
-    }
-    else{
-      stateUpdate();
-      hideBigStar();
-      uneclipse();
-    }
-  })
-  $('.jupiter').click(function(){
-    if (univese.contentOpen == false) {
-      hideBigStar();
-      eclipse();
-      $(this).addClass("active");
-      $('#jupiter_content').addClass("active");
-      $('.solar-syst').addClass("active");
-      $('.jupiter-bg').addClass("active");
-       stateUpdate();
-      event.stopPropagation();
-    }else{
-      stateUpdate();
-      hideBigStar();
-      uneclipse();
-    }
-  })
-  $('.saturn').click(function(){
-    if (univese.contentOpen == false) {
-      hideBigStar();
-      eclipse();
-      $(this).addClass("active");
-      $('#saturn_content').addClass("active");
-      $('.solar-syst').addClass("active");
-      $('.saturn-bg').addClass("active");
-       stateUpdate();
-      event.stopPropagation();
-    }else{
-      stateUpdate();
-      hideBigStar();
-      uneclipse();
-    }
-  })
-  $('.uranus').click(function(){
-    if (univese.contentOpen == false) {
-      hideBigStar();
-      eclipse();
-      $(this).addClass("active");
-      $('#uranus_content').addClass("active");
-      $('.solar-syst').addClass("active");
-      $('.uranus-bg').addClass("active");
-       stateUpdate();
-      event.stopPropagation();
-    }else{
-      stateUpdate();
-      hideBigStar();
-      uneclipse();
-    }
-  })
-  $('.neptune').click(function(){
-    if (univese.contentOpen == false) {
-      hideBigStar();
-      eclipse();
-      $(this).addClass("active");
-      $('#neptune_content').addClass("active");
-      $('.solar-syst').addClass("active");
-      $('.neptune-bg').addClass("active");
-       stateUpdate();
-      event.stopPropagation();
-    }else{
-      stateUpdate();
-      hideBigStar();
-      uneclipse();
-    }
-  })
+  // })
+  // $('.mercury').click(function(){
+  //   if (univese.contentOpen == false) {
+  //     hideBigStar();
+  //     eclipse();
+  //     $(this).addClass("active");
+  //     $('#mercury_content').addClass("active");
+  //     $('.solar-syst').addClass("active");
+  //     $('.mercury-bg').addClass("active");
+  //     stateUpdate();
+  //     event.stopPropagation();
+  //   }else{
+  //     stateUpdate();
+  //     hideBigStar();
+  //     uneclipse();
+  //   }
+  // })
+  // $('.venus').click(function(){
+  //   if (univese.contentOpen == false) {
+  //     hideBigStar();
+  //     eclipse();
+  //     $(this).addClass("active");
+  //     $('#venus_content').addClass("active");
+  //     $('.solar-syst').addClass("active");
+  //     $('.venus-bg').addClass("active");
+  //      stateUpdate();
+  //     event.stopPropagation();
+  //   }
+  //   else{
+  //     stateUpdate();
+  //     hideBigStar();
+  //     uneclipse();
+  //   }
+  // })
+  // $('.earth').click(function(){
+  //   if (univese.contentOpen == false) {
+  //     hideBigStar();
+  //     eclipse();
+  //     $(this).addClass("active");
+  //     $('#earth_content').addClass("active");
+  //     $('.solar-syst').addClass("active");
+  //     $('.earth-bg').addClass("active");
+  //      stateUpdate();
+  //     event.stopPropagation();
+  //   }
+  //   else{
+  //     stateUpdate();
+  //     hideBigStar();
+  //     uneclipse();
+  //   }
+  // })
+  // $('.mars').click(function(){
+  //   if (univese.contentOpen == false) {
+  //     hideBigStar();
+  //     eclipse();
+  //     $(this).addClass("active");
+  //     $('#mars_content').addClass("active");
+  //     $('.solar-syst').addClass("active");
+  //     $('.mars-bg').addClass("active");
+  //      stateUpdate();
+  //     event.stopPropagation();
+  //   }
+  //   else{
+  //     stateUpdate();
+  //     hideBigStar();
+  //     uneclipse();
+  //   }
+  // })
+  // $('.jupiter').click(function(){
+  //   if (univese.contentOpen == false) {
+  //     hideBigStar();
+  //     eclipse();
+  //     $(this).addClass("active");
+  //     $('#jupiter_content').addClass("active");
+  //     $('.solar-syst').addClass("active");
+  //     $('.jupiter-bg').addClass("active");
+  //      stateUpdate();
+  //     event.stopPropagation();
+  //   }else{
+  //     stateUpdate();
+  //     hideBigStar();
+  //     uneclipse();
+  //   }
+  // })
+  // $('.saturn').click(function(){
+  //   if (univese.contentOpen == false) {
+  //     hideBigStar();
+  //     eclipse();
+  //     $(this).addClass("active");
+  //     $('#saturn_content').addClass("active");
+  //     $('.solar-syst').addClass("active");
+  //     $('.saturn-bg').addClass("active");
+  //      stateUpdate();
+  //     event.stopPropagation();
+  //   }else{
+  //     stateUpdate();
+  //     hideBigStar();
+  //     uneclipse();
+  //   }
+  // })
+  // $('.uranus').click(function(){
+  //   if (univese.contentOpen == false) {
+  //     hideBigStar();
+  //     eclipse();
+  //     $(this).addClass("active");
+  //     $('#uranus_content').addClass("active");
+  //     $('.solar-syst').addClass("active");
+  //     $('.uranus-bg').addClass("active");
+  //      stateUpdate();
+  //     event.stopPropagation();
+  //   }else{
+  //     stateUpdate();
+  //     hideBigStar();
+  //     uneclipse();
+  //   }
+  // })
+  // $('.neptune').click(function(){
+  //   if (univese.contentOpen == false) {
+  //     hideBigStar();
+  //     eclipse();
+  //     $(this).addClass("active");
+  //     $('#neptune_content').addClass("active");
+  //     $('.solar-syst').addClass("active");
+  //     $('.neptune-bg').addClass("active");
+  //      stateUpdate();
+  //     event.stopPropagation();
+  //   }else{
+  //     stateUpdate();
+  //     hideBigStar();
+  //     uneclipse();
+  //   }
+  // })
   //内容和背景的隐藏，恢复原状
   function hideBigStar($element){
     //active 控制了内容 left
@@ -257,6 +221,24 @@ $(document).ready(function(){
   // }
 
   //scroll
-  
+  function timeUpdate(frqc){
+    //frqc为更新时间的频率，以 1000ms 为 base
+    var cnt = 0;
+    var trans_time,year,day;
+    setInterval(function(){
+      cnt = cnt + frqc/1000;
+      trans_time = cnt*365/30;
+      if (trans_time>365) {
+        year = Math.floor(trans_time/365);
+        day = trans_time%365;
+        res = year + "年 " + Math.floor(day) + " 天"
+      }else{
+        res = Math.floor(trans_time) + " 天";
+      }
+      $('#time').text(res);
+    }, frqc)
+  }
+
+  timeUpdate(200);
 
 })

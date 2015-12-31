@@ -5,7 +5,9 @@
     }
    @return unquote($value);
 }
-$shadows-small:  multiple-box-shadow(2000);
+$shadows-small:  multiple-box-shadow(600);
+$shadows-small-2:  multiple-box-shadow(500);
+$shadows-small-3:  multiple-box-shadow(700);
 $shadows-medium: multiple-box-shadow(800);
 $shadows-big:    multiple-box-shadow(50);
 
@@ -33,13 +35,26 @@ html,body{
 .star1{
   width:1px;
   height:1px;
-   box-shadow: $shadows-small;
-    animation:star-rotate 300s linear infinite ;
+  box-shadow: $shadows-small;
+  animation:star-rotate 300s linear infinite ;
+}
+.star11{
+  width:1px;
+  height:1px;
+  box-shadow: $shadows-small-2;
+  animation:star-rotate 250s linear infinite ;
+}
+.star12{
+  width:1px;
+  height:1px;
+  box-shadow: $shadows-small-3;
+  animation:star-rotate 400s linear infinite ;
 }
 .star2{
   width:2px;
-  height:2px;   box-shadow: $shadows-medium;
-    animation:star-rotate 200s linear infinite ;
+  height:2px;   
+  box-shadow: $shadows-medium;
+  animation:star-rotate 200s linear infinite ;
 }
 .star3{
   width:3px;

@@ -35,6 +35,7 @@
   height: 0px;
   width: 240px;
   transition:all 0.3s ease-in-out;
+  z-index: 1000;
 }
 *.line1{
   opacity: 0;
@@ -67,7 +68,6 @@ body {
 h1 {
   font-weight: 300;
   font-size: 2.5em;
-  text-transform: uppercase;
   font-family: Lato;
   line-height: 1.6em;
   letter-spacing: .1em;
@@ -109,36 +109,45 @@ a.icon, a:visited.icon {
 .description p.author .fa-heart {
   color: #860014;
 }
+.description .iconfont{
+  font-size: 170px;
+}
 .footer{
   width: 350px;
   position: fixed; 
-  bottom: 5%;
-  right: 5%;
+  bottom: 0;
+  right: 10px;
   z-index: 700;
+  opacity: 0.5;
 }
 .footer .footer-content{
   display: none;
+  text-align: right;
 }
 .footer .links{
-  display: inline-block;
+  display: block;
+  text-align: right;
 }
 .button{
   position: fixed;
-  bottom: 5%;
-  left: 50%;
+  top: 2%;
+  right: 5%;
   margin-left: -32px;
-  z-index: 700;
+  z-index: 1000;
 }
+  
 .button a.btn{
-    padding: 10px 20px;
-    border-radius: 20px;
-    border: 1px solid rgba(102, 166, 229, 0.24);
+  opacity: 0.8;
 }
 .button a.btn:hover{
-    border: 1px solid rgba(255,255,255,0.9);
+  opacity: 1;
 }
 .button a.btn:visited{
     opacity: 1;
+}
+.button .time-wrp{
+  opacity: 0.8;
+  display: inline-block;
 }
 hr {
   margin: 26px 0;
@@ -155,11 +164,18 @@ code {
   font-size: .9em;
 }
 .star-img{
-  z-index: 799;
+  z-index: 1000;
   width: 0px;
   height: 0px;
   opacity: 1;
   transition: all 0.8s ease-in-out;
+}
+.star-img .img{
+  filter: grayscale(100%) brightness(100%) contrast(100%);
+  -webkit-filter: grayscale(100%) brightness(100%) contrast(100%);
+  -o-filter: grayscale(100%) brightness(100%) contrast(100%);
+  -moz-filter: grayscale(100%) brightness(100%) contrast(100%);
+  filter: grayscale(100%) brightness(100%) contrast(100%);
 }
 .star-img.eclipse{
   opacity: 0;
@@ -169,75 +185,129 @@ code {
   top: 20%;
   left: 80%;
 }
+.star-img1 .img{
+  background-image:  url('img/profile/1.png');
+}
 .star-img2{
   position: absolute;
   top: 11%;
   left: 90%;
+}
+.star-img2 .img{
+  background-image:  url('img/profile/2.png');
 }
 .star-img3{
   position: absolute;
   top: 8%;
   left: 75%;
 }
+.star-img3 .img{
+  background-image:  url('img/profile/3.png');
+}
 .star-img4{
   position: absolute;
   top: 45%;
   left: 92%;
+}
+.star-img4 .img{
+  background-image:  url('img/profile/4.png');
 }
 .star-img5{
   position: absolute;
   top: 30%;
   left: 88%;
 }
+.star-img5 .img{
+  background-image:  url('img/profile/5.png');
+}
 .star-img6{
   position: absolute;
-  top: 66%;
+  top: 80%;
   left: 86%;
+}
+.star-img6 .img{
+  background-image:  url('img/profile/6.png');
 }
 .star-img7{
   position: absolute;
   top: 25%;
   left: 10%;
 }
+.star-img7 .img{
+  background-image:  url('img/profile/7.png');
+}
 .star-img8{
   position: absolute;
   top: 40%;
   left: 7%;
+}
+.star-img8 .img{
+  background-image:  url('img/profile/8.png');
 }
 .star-img9{
   position: absolute;
   top: 11%;
   left: 30%;
 }
+.star-img9 .img{
+  background-image:  url('img/profile/9.png');
+}
 .star-img10{
   position: absolute;
   top: 50%;
   left: 10%;
+}
+.star-img10 .img{
+  background-image:  url('img/profile/10.png');
 }
 .star-img11{
   position: absolute;
   top: 65%;
   left: 14%;
 }
-.star-img12{
-  position: absolute;
-  top: 77%;
-  left: 17%;
+.star-img11 .img{
+  background-image:  url('img/profile/11.png');
 }
-.star-img13{
+.star-img12{
   position: absolute;
   top: 31%;
   left: 17%;
+}
+.star-img12 .img{
+  background-image:  url('img/profile/12.png');
+}
+.star-img13{
+  position: absolute;
+  
+  top: 77%;
+  left: 17%;
+}
+.star-img13 .img{
+  background-image:  url('img/profile/13.png');
 }
 .star-img14{
   position: absolute;
   top: 59%;
   left: 90%;
 }
+.star-img14 .img{
+  background-image:  url('img/profile/14.png');
+}
 .star-img15{
   position: absolute;
   top: 72%;
   left: 92%;
+}
+.star-img15 .img{
+  background-image:  url('img/profile/15.png');
+}
+.star-img16{
+  position: absolute;
+  top: 72%;
+  left: 92%;
+}
+.star-img16 .img{
+  background-image:  url('img/profile/16.png');
 }
 .star-img1 .star{
   animation:star 4s linear 2s infinite;
@@ -330,8 +400,8 @@ code {
   animation:ring 2s linear 1s infinite;
 }
 .star{
-  height: 4px;
-  width: 4px;
+  height: 3px;
+  width: 3px;
   border-radius: 100px;
   position: absolute;
   margin-top: -2px;
@@ -354,7 +424,6 @@ code {
   width: 20px;
   border-radius: 1000px;
   transition:all 0.5s ease-in-out;
-  background-image: url(jinzhengen.jpg);
   background-position: top center;
   background-size: 20px;
   margin-top: -10px;
@@ -435,7 +504,7 @@ code {
   border-radius: 100px;
 }
 .solar-syst div {
-  border-radius: 1000px;
+  border-radius: 50%;
   top: 50%;
   left: 50%;
   position: absolute;
@@ -1415,6 +1484,7 @@ code {
   left: 100%;
   transition:left 0.5s ease-in-out;
   -webkit-transform:transition3d(0,0,0);
+  display: none;
 }
 .big-content-bg.active{
   left: 36%;
@@ -1479,6 +1549,7 @@ code {
   margin: 10px;
   transition:all 0.5s ease-in-out;
   background: rgba(51,51,51,0.5);
+  display: none;
 }
 .big-content.active{
   left: 50%;
@@ -1611,3 +1682,8 @@ code {
     display: none;
   }
 }
+#author{
+  text-align: right;
+  font-size: 12px;
+}
+
