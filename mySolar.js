@@ -14,12 +14,16 @@ $(document).ready(function(){
 
   //图片（照片）和文字鼠标响应
   $('.img').mouseenter(function(){
-    $(this).addClass("active")
-    $(this).next().addClass("active")
+    $(this).addClass("active");
+    $(this).find(".imgcontent").addClass("active");
   })
   $('.img').mouseleave(function(){
-    $(this).removeClass("active")
-    $(this).next().removeClass("active")
+    $(this).removeClass("active");
+    $(this).find(".imgcontent").removeClass("active");
+  })
+
+  $('.img p').mouseenter(function(e){
+    e.stopPropagation();
   })
 
 
@@ -227,11 +231,11 @@ $(document).ready(function(){
     var trans_time,year,day;
     setInterval(function(){
       cnt = cnt + frqc/1000;
-      trans_time = cnt*365/30;
+      trans_time = cnt*365/30;//将 秒 转换为 “天”
       if (trans_time>365) {
         year = Math.floor(trans_time/365);
         day = trans_time%365;
-        res = year + "年 " + Math.floor(day) + " 天"
+        res = year + " 年 " + Math.floor(day) + " 天"
       }else{
         res = Math.floor(trans_time) + " 天";
       }
@@ -239,6 +243,34 @@ $(document).ready(function(){
     }, frqc)
   }
 
-  timeUpdate(200);
+  //timeUpdate(200);
+
+  function timeUpdateByHour(frqc){
+    //frqc为更新时间的频率，以 1ms 为 base
+    var cnt = 0;
+    var trans_time,year,day,hour;
+    setInterval(function(){
+      cnt = cnt + frqc/1000;
+      trans_time = cnt * 365 * 24 / 30; //将 秒 转换为 “小时”
+      if (trans_time > 24 ) {
+        day = Math.floor(trans_time/24);
+        hour = Math.floor(trans_time%24);
+        if (trans_time > 365 * 24) {
+            year  = Math.floor(trans_time/(365*24));
+            day = Math.floor(trans_time/24 - year * 365 );
+            hour = Math.floor(trans_time%24);
+
+            res = year + "y " + day + "d " + hour +"h ";
+          }else{
+            res = "0y " + day + "d " + hour +"h ";
+          }
+      }else{
+         res = "0y " + day + "0d " + hour +"h ";
+      }
+      $('#time').text(res);
+    }, frqc)
+  }
+
+  timeUpdateByHour(30);
 
 })

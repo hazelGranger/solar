@@ -87,11 +87,12 @@ a.icon, a:visited.icon {
 }
 
 .description {
-  padding: 30px;
+  padding: 20px;
+  padding-top: 10px;
   position: absolute;
   top: 0;
   left: 0;
-  width: 25%;
+  width: auto;
   z-index: 999;
 }
 .head-content{
@@ -116,9 +117,9 @@ a.icon, a:visited.icon {
   width: 350px;
   position: fixed; 
   bottom: 0;
-  right: 10px;
+  right: 0;
   z-index: 700;
-  opacity: 0.5;
+  padding: 30px;
 }
 .footer .footer-content{
   display: none;
@@ -130,12 +131,11 @@ a.icon, a:visited.icon {
 }
 .button{
   position: fixed;
-  top: 2%;
-  right: 5%;
-  margin-left: -32px;
+  bottom: 0;
+  left: 0;
   z-index: 1000;
+  padding: 30px;
 }
-  
 .button a.btn{
   opacity: 0.8;
 }
@@ -148,6 +148,13 @@ a.icon, a:visited.icon {
 .button .time-wrp{
   opacity: 0.8;
   display: inline-block;
+  width: 180px;
+}
+.button .time-wrp .iconfont{
+  float: right;
+}
+.button .notation{
+  opacity: 0.6;
 }
 hr {
   margin: 26px 0;
@@ -176,6 +183,26 @@ code {
   -o-filter: grayscale(100%) brightness(100%) contrast(100%);
   -moz-filter: grayscale(100%) brightness(100%) contrast(100%);
   filter: grayscale(100%) brightness(100%) contrast(100%);
+}
+.star-img .img .line1{
+  width: 20px;
+  height: 0;
+  border: 1px solid #9e9b9b;
+  position: relative;
+  opacity: 1;
+  top: -7px;
+  left: 45px;
+  transform: rotateZ(-56deg);
+}
+.star-img .img .line2{
+  width: 25px;
+  height: 0;
+  border: 1px solid #9e9b9b;
+  position: relative;
+  opacity: 1;
+  top: -17px;
+  left: 60px;
+
 }
 .star-img.eclipse{
   opacity: 0;
@@ -432,28 +459,34 @@ code {
   z-index: 799;
   cursor: pointer;
 }
+.img.active{
+  height: 70px;
+  width: 70px;
+  margin-left: -50px;
+  margin-top: -50px;
+  background-size: 70px;
+  opacity: 1;
+  cursor: pointer;
+}
 .imgcontent{
-  text-align: center;
+  text-align: left;
   position: relative;
   display: block;
   width: 100px;
-  margin-left: -50px;
-  margin-top: 50px;
+  margin-left: 92px;
+  margin-top: -45px;
   opacity: 0;
   transition:all 0.5s ease-in-out;
+  z-index: -1;
+}
+.imgcontent .pos{
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
 }
 .imgcontent.active{
   opacity: 1;
 }
-.img.active{
-  height: 100px;
-  width: 100px;
-  margin-left: -50px;
-  margin-top: -50px;
-  background-size: 100px;
-  opacity: 1;
-  cursor: pointer;
-}
+
 @keyframes star{
   0%{
     opacity: 0.2;
@@ -492,6 +525,7 @@ code {
   height: 100%;
   position: relative;
   transition:all 0.5s ease-in-out;
+  transform: scale(0.9);
 }
 .solar-syst:after {
   content: "";
@@ -509,6 +543,12 @@ code {
   left: 50%;
   position: absolute;
   transition:all 0.5s ease-in-out;
+}
+.solar-syst .content .line1{
+  border-radius: 0;
+}
+.solar-syst .content .line2{
+  border-radius: 0;
 }
 .solar-syst.active {
   transform: scale(1);
@@ -551,14 +591,32 @@ code {
   margin-left: -25px;
   cursor: pointer;
 }
-.solar-syst .sun .content{
-  color: rgba(255,255,255,0.9);
-  font-size: 16px;
+
+
+.sun.active .content,
+.sun:hover .content{
+  height: auto;
+  width: auto;
+}
+.sun.active .content .text,
+.sun:hover .content .text{
+  transform:rotateX(0deg);
+}
+.sun .content .line1{
+  width: 40px;
+  height: 0px;
+  border: 1px solid #9e9b9b;
   position: relative;
-  display: block;
-  border: 0px;
-  left: -15px;
-  top: 58px;
+  top: 35px;
+  left: -49px;
+  transform: rotateZ(-56deg);
+}
+.sun .content .line2{
+  width: 30px;
+  border: 1px solid #9e9b9b;
+  position: relative;
+  top: 17px;
+  left: -18px;
 }
 .sun.active .content,
 .sun:hover .content{
@@ -568,6 +626,14 @@ code {
 .sun.active .content .text,
 .sun:hover .content .text{
   transform:rotateX(0deg);
+}
+.sun.active .content .line1,
+.sun:hover .content .line1{
+  opacity: 1;
+}
+.sun.active .content .line2,
+.sun:hover .content .line2{
+  opacity: 1;
 }
 .mercury {
   height: 105px;
@@ -1212,8 +1278,8 @@ code {
 .solar-syst .neptune .content{
   color: rgba(255,255,255,0.9);
   font-size: 16px;
-  top: -41px;
-  left: 512px;
+  top: -65px;
+  left: 500px;
   position: relative;
   display: block;
   -webkit-animation: disorb 4911.78386s linear infinite;
@@ -1682,8 +1748,76 @@ code {
     display: none;
   }
 }
+
 #author{
   text-align: right;
   font-size: 12px;
+}
+#author .info{
+  opacity: 0.6;
+}
+
+.solar-syst .sun .content{
+  color: rgba(255,255,255,0.9);
+  font-size: 16px;
+  position: relative;
+  display: block;
+  border: 0px;
+  top: -55px;
+  left: 70px;
+}
+.aster .content .text{
+  width: 200px;
+  border: none;
+  position: relative;
+  left: -35px;
+  top: -105px;
+}
+.aster .content .text .left{
+  float: left;
+  text-align: right;
+  width: 110px;
+  position: relative;
+  left: 0;
+  font-size: 14px;
+  border: none;
+}
+.aster .content .text .left .star-name{
+  font-size: 30px;
+}
+.aster .content .text .right{
+  float: right;
+  text-align: left;
+  width: auto;
+  position: relative;
+  left: 0;
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+  border: none;
+}
+.aster .content .text .right .star-name{
+  font-size: 16px;
+  line-height: 45px;
+}
+.aster .content .text .right .star-name span{
+  vertical-align: sub;
+  display: inline-block;
+  height: 30px;
+}
+.aster .content .line1{
+  width: 40px;
+  height: 0px;
+  border: 1px solid #9e9b9b;
+  position: relative;
+  top: 35px;
+  left: -49px;
+  transform: rotateZ(-56deg);
+}
+.aster .content .line2{
+  width: 30px;
+  border: 1px solid #9e9b9b;
+  position: relative;
+  top: 17px;
+  left: -18px;
 }
 
