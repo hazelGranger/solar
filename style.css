@@ -148,7 +148,7 @@ a.icon, a:visited.icon {
 .button .time-wrp{
   opacity: 0.8;
   display: inline-block;
-  width: 180px;
+  width: 190px;
 }
 .button .time-wrp .iconfont{
   float: right;
@@ -481,7 +481,11 @@ code {
 }
 .imgcontent .pos{
   color: rgba(255,255,255,0.5);
-  font-size: 12px;
+  font-size: 14px;
+}
+.imgcontent .member-name{
+  font-size: 20px;
+  color: #fff;
 }
 .imgcontent.active{
   opacity: 1;
@@ -1767,16 +1771,19 @@ code {
   left: 70px;
 }
 .aster .content .text{
-  width: 200px;
+  width: 320px;
   border: none;
   position: relative;
   left: -35px;
   top: -105px;
 }
+.aster .content .text sup{
+  font-size: 10px;
+}
 .aster .content .text .left{
   float: left;
   text-align: right;
-  width: 110px;
+  width: 150px;
   position: relative;
   left: 0;
   font-size: 14px;
@@ -1786,8 +1793,9 @@ code {
   font-size: 30px;
 }
 .aster .content .text .right{
-  float: right;
+  float: left;
   text-align: left;
+  margin-left: 20px;
   width: auto;
   position: relative;
   left: 0;
