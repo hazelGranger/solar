@@ -273,4 +273,20 @@ $(document).ready(function(){
 
   timeUpdateByHour(30);
 
+  $('.description .iconfont').click(function(){
+    var darkbg = $('.darkbg');
+    darkbg.show();
+    setTimeout(function(){
+      darkbg.css("opacity","1");
+    }, 100);
+  });
+
+  $('.darkbg .close').click(function(){
+    var darkbg = $('.darkbg');
+    darkbg.css("opacity","0");
+    setTimeout(function(){
+      darkbg.hide();
+    }, 500);
+  });
+
 })

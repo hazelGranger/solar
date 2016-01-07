@@ -51,7 +51,9 @@
 html, body {
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling:touch;
 }
 
 body {
@@ -76,7 +78,7 @@ h1 {
 a, a:visited {
   text-decoration: none;
   color: white;
-  opacity: .7;
+  opacity: 0.6;
 }
 a:hover, a:visited:hover {
   opacity: 1;
@@ -112,6 +114,12 @@ a.icon, a:visited.icon {
 }
 .description .iconfont{
   font-size: 170px;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: color 0.5s ease-in-out;
+}
+.description .iconfont:hover{
+  color: #fff;
 }
 .footer{
   width: 350px;
@@ -135,6 +143,7 @@ a.icon, a:visited.icon {
   left: 0;
   z-index: 1000;
   padding: 30px;
+  font-size: 12px;
 }
 .button a.btn{
   opacity: 0.8;
@@ -148,7 +157,7 @@ a.icon, a:visited.icon {
 .button .time-wrp{
   opacity: 0.8;
   display: inline-block;
-  width: 190px;
+  width: 170px;
 }
 .button .time-wrp .iconfont{
   float: right;
@@ -217,16 +226,16 @@ code {
 }
 .star-img2{
   position: absolute;
-  top: 11%;
-  left: 90%;
+  top: 15%;
+  left: 89%;
 }
 .star-img2 .img{
   background-image:  url('img/profile/2.png');
 }
 .star-img3{
   position: absolute;
-  top: 8%;
-  left: 75%;
+  top: 40%;
+  left: 15%;
 }
 .star-img3 .img{
   background-image:  url('img/profile/3.png');
@@ -234,7 +243,7 @@ code {
 .star-img4{
   position: absolute;
   top: 45%;
-  left: 92%;
+  left: 87%;
 }
 .star-img4 .img{
   background-image:  url('img/profile/4.png');
@@ -481,7 +490,7 @@ code {
 }
 .imgcontent .pos{
   color: rgba(255,255,255,0.5);
-  font-size: 14px;
+  font-size: 12px;
 }
 .imgcontent .member-name{
   font-size: 20px;
@@ -676,11 +685,11 @@ code {
   font-size: 16px;
   position: relative;
   display: block;
-  top: -63px;
-  left: 91px;
+  top: -62px;
+  left: 97px;
   -webkit-animation: disorb 7.18673s linear infinite;
           animation: disorb 7.18673s linear infinite;
-  transform-origin: -40px 63px;
+  transform-origin: -47px 62px;
   border:0px;
 }
 .mercury .content .line1{
@@ -838,12 +847,12 @@ code {
   font-size: 16px;
   position: relative;
   display: block;
-  top: -63px;
-  left: 155px;
+  top: -62px;
+  left: 157px;
   -webkit-animation: disorb 30s linear infinite;
           animation: disorb 30s linear infinite;
   border: 0px;
-  transform-origin:-43px 63px;
+  transform-origin:-46px 62px;
   z-index: 12;
 }
 .earth .content .line1{
@@ -931,14 +940,14 @@ code {
 .solar-syst .mars .content{
   color: rgba(255,255,255,0.9);
   font-size: 16px;
-  top: -63px;
-  left: 189px;
+  top: -62px;
+  left: 193px;
   position: relative;
   display: block;
   -webkit-animation: disorb 56.42613s linear infinite;
           animation: disorb 56.42613s linear infinite;
   border: 0px;
-  transform-origin:-40px 63px;
+  transform-origin:-44px 62px;
 }
 .mars .content .line1{
   width: 50px;
@@ -946,7 +955,7 @@ code {
   border: 1px solid #9e9b9b;
   position: relative;
   top: 32px;
-  left: -49px;
+  left: -46px;
   transform: rotateZ(-56deg);
 }
 .mars .content .line2{
@@ -1016,13 +1025,13 @@ code {
   color: rgba(255,255,255,0.9);
   font-size: 16px;
   top: -73px;
-  left: 300px;
+  left: 302px;
   position: relative;
   display: block;
   -webkit-animation: disorb 355.72282s linear infinite;
           animation: disorb 355.72282s linear infinite;
   border: 0px;
-  transform-origin:-47px 63px;
+  transform-origin:-49px 73px;
 }
 .jupiter .content .line1{
   width: 50px;
@@ -1203,13 +1212,13 @@ code {
   color: rgba(255,255,255,0.9);
   font-size: 16px;
   top: -63px;
-  left: 434px;
+  left: 435px;
   position: relative;
   display: block;
   -webkit-animation: disorb 2512.4002s linear infinite;
           animation: disorb 2512.4002s linear infinite;
   border: 0px;
-  transform-origin:-45px 63px;
+  transform-origin:-46px 63px;
 }
 .uranus .content .line1{
   width: 50px;
@@ -1282,14 +1291,14 @@ code {
 .solar-syst .neptune .content{
   color: rgba(255,255,255,0.9);
   font-size: 16px;
-  top: -65px;
+  top: -62px;
   left: 500px;
   position: relative;
   display: block;
   -webkit-animation: disorb 4911.78386s linear infinite;
           animation: disorb 4911.78386s linear infinite;
   border: 0px;
-  transform-origin:-62px 41px;
+  transform-origin: -60px 62px;
 }
 .neptune .content .line1{
   width: 47px;
@@ -1767,15 +1776,15 @@ code {
   position: relative;
   display: block;
   border: 0px;
-  top: -55px;
-  left: 70px;
+  top: -54px;
+  left: 84px;
 }
 .aster .content .text{
-  width: 320px;
+  width: 340px;
   border: none;
   position: relative;
-  left: -35px;
-  top: -105px;
+  left: -88px;
+  top: -115px;
 }
 .aster .content .text sup{
   font-size: 10px;
@@ -1786,11 +1795,17 @@ code {
   width: 150px;
   position: relative;
   left: 0;
-  font-size: 14px;
+  font-size: 12px;
   border: none;
 }
 .aster .content .text .left .star-name{
   font-size: 30px;
+}
+.aster .content .text .left p:not(.star-name){
+  transform: scale(0.75);
+  font-size: 16px;
+  transform-origin: right;
+  line-height: 25px;
 }
 .aster .content .text .right{
   float: left;
@@ -1800,12 +1815,17 @@ code {
   position: relative;
   left: 0;
   color: rgba(255,255,255,0.6);
-  font-size: 14px;
+  font-size: 12px;
   border: none;
 }
 .aster .content .text .right .star-name{
   font-size: 16px;
   line-height: 45px;
+}
+.aster .content .text .right p:not(.star-name){
+  transform: scale(0.75);
+  font-size: 16px;
+  transform-origin: left;
 }
 .aster .content .text .right .star-name span{
   vertical-align: sub;
@@ -1822,10 +1842,92 @@ code {
   transform: rotateZ(-56deg);
 }
 .aster .content .line2{
-  width: 30px;
+  width: 35px;
   border: 1px solid #9e9b9b;
   position: relative;
   top: 17px;
   left: -18px;
 }
-
+.darkbg{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.6);
+  transition: opacity 0.5s ease-in-out;
+  display: none;
+  opacity: 0;
+}
+.darkbg .wrp{
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -200px;
+  margin-top: -100px;
+}
+.darkbg .close-wrp{
+  right: 20px;
+  top: 20px;
+  position: absolute;
+}
+.darkbg .close-wrp button.close{
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  transition: box-shadow 0.5s ease-in-out;
+}
+.darkbg .close-wrp button.close:before{
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 2px;
+  margin-left: -6px;
+  margin-top: -1px;
+  content: '';
+  position: absolute;
+  transform: rotate(45deg);
+  background-color: #fff;
+}
+.darkbg .close-wrp button.close:after{
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 2px;
+  margin-left: -6px;
+  margin-top: -1px;
+  content: '';
+  position: absolute;
+  transform: rotate(-45deg);
+  background-color: #fff;
+}
+.darkbg .close-wrp button.close:hover{
+  box-shadow: 0px 0px 0px 20px #fff inset;
+  -moz-box-shadow: 0px 0px 0px 20px #fff inset; 
+  -webkit-box-shadow: 0px 0px 0px 20px #fff inset; 
+  -o-box-shadow: 0px 0px 0px 20px #fff inset; 
+  -ms-box-shadow: 0px 0px 0px 20px #fff inset;
+  transform: scale(0.8);
+  -moz-transform: scale(0.85);
+  -ms-transform: scale(0.85);
+  -webkit-transform: scale(0.85);
+}
+.darkbg .close-wrp button.close:hover:before{
+  background-color: #000;
+  transform: rotate(45deg) scale(0.8);
+}
+.darkbg .close-wrp button.close:hover:after{
+  background-color: #000;
+  transform: rotate(-45deg) scale(0.8);
+}
+.darkbg .close-wrp button.close:focus{
+  outline: none;
+}
