@@ -13,19 +13,22 @@ $(document).ready(function(){
   })
 
   //图片（照片）和文字鼠标响应
-  $('.img').mouseenter(function(){
-    $(this).addClass("active");
+  $('.star-img').mouseenter(function(){
+    $(this).find('.img').addClass("active");
+    $(this).find('.line1').addClass("active");
+    $(this).find('.line2').addClass("active");
     $(this).find(".imgcontent").addClass("active");
   })
-  $('.img').mouseleave(function(){
-    $(this).removeClass("active");
+  $('.star-img').mouseleave(function(){
+    $(this).find('.img').removeClass("active");
+    $(this).find('.line1').removeClass("active");
+    $(this).find('.line2').removeClass("active");
     $(this).find(".imgcontent").removeClass("active");
   })
 
   $('.img p').mouseenter(function(e){
     e.stopPropagation();
   })
-
 
 
   $('body').click(function(){
@@ -274,19 +277,31 @@ $(document).ready(function(){
   timeUpdateByHour(30);
 
   $('.description .iconfont').click(function(){
-    var darkbg = $('.darkbg');
-    darkbg.show();
-    setTimeout(function(){
-      darkbg.css("opacity","1");
-    }, 100);
+    // var darkbg = $('.darkbg');
+    // var device = $(window);
+    // if (device.width() < 768) {
+    //   return false;
+    // }
+    // darkbg.show();
+    // setTimeout(function(){
+    //   darkbg.css("opacity","1");
+    // }, 100);
   });
 
   $('.darkbg .close').click(function(){
-    var darkbg = $('.darkbg');
-    darkbg.css("opacity","0");
-    setTimeout(function(){
-      darkbg.hide();
-    }, 500);
+    // var darkbg = $('.darkbg');
+    // darkbg.css("opacity","0");
+    // setTimeout(function(){
+    //   darkbg.hide();
+    // }, 500);
+  });
+
+  $('.aster').click(function(){
+    var device = $(window);
+    if (device.width() > 767) {
+      $('.aster').removeClass("active");
+      $(this).addClass("active");
+    }
   });
 
 })
