@@ -48,15 +48,6 @@
   white-space: nowrap;
   transition:all 0.3s ease-in-out;
 }
-@media(min-width: 768px){
-  html, body {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-   /* overflow-y: scroll;*/
-    -webkit-overflow-scrolling:touch;
-  }
-}
 @media(max-width: 767px){
   html, body {
     height: 100%;
@@ -139,6 +130,7 @@ a.icon, a:visited.icon {
   right: 0;
   z-index: 700;
   padding: 30px;
+  padding-bottom: 10px;
 }
 .footer .footer-content{
   display: none;
@@ -154,6 +146,7 @@ a.icon, a:visited.icon {
   left: 0;
   z-index: 1000;
   padding: 30px;
+  padding-bottom: 10px;
   font-size: 12px;
 }
 .button a.btn{
@@ -168,13 +161,13 @@ a.icon, a:visited.icon {
 .button .time-wrp{
   opacity: 0.8;
   display: inline-block;
-  width: 170px;
+  width: 240px;
 }
 .button .time-wrp .iconfont{
   float: right;
 }
 .button .notation{
-  opacity: 0.6;
+  float: right;
 }
 hr {
   margin: 26px 0;
@@ -207,7 +200,7 @@ code {
 .star-img .line1{
   width: 20px;
   height: 0;
-  border: 1px solid #9e9b9b;
+  border: 1px solid rgba(255,255,255,0.5);
   position: relative;
   opacity: 1;
   top: -40px;
@@ -222,7 +215,7 @@ code {
 .star-img .line2{
   width: 25px;
   height: 0;
-  border: 1px solid #9e9b9b;
+  border: 1px solid rgba(255,255,255,0.5);
   position: relative;
   top: -50px;
   left: 29px;
@@ -238,16 +231,16 @@ code {
 }
 .star-img1{
   position: absolute;
-  top: 20%;
-  left: 80%;
+  top: 13%;
+  left: 78%;
 }
 .star-img1 .img{
   background-image:  url('img/profile/1.png');
 }
 .star-img2{
   position: absolute;
-  top: 15%;
-  left: 89%;
+  top: 24%;
+  left: 82%;
 }
 .star-img2 .img{
   background-image:  url('img/profile/2.png');
@@ -262,16 +255,16 @@ code {
 }
 .star-img4{
   position: absolute;
-  top: 45%;
-  left: 87%;
+  top: 51%;
+  left: 85%;
 }
 .star-img4 .img{
   background-image:  url('img/profile/4.png');
 }
 .star-img5{
   position: absolute;
-  top: 30%;
-  left: 88%;
+  top: 33%;
+  left: 85%;
 }
 .star-img5 .img{
   background-image:  url('img/profile/5.png');
@@ -302,8 +295,8 @@ code {
 }
 .star-img9{
   position: absolute;
-  top: 11%;
-  left: 30%;
+  top: 43%;
+  left: 87%;
 }
 .star-img9 .img{
   background-image:  url('img/profile/9.png');
@@ -326,15 +319,14 @@ code {
 }
 .star-img12{
   position: absolute;
-  top: 31%;
-  left: 17%;
+  top: 20%;
+  left: 19%;
 }
 .star-img12 .img{
   background-image:  url('img/profile/12.png');
 }
 .star-img13{
   position: absolute;
-  
   top: 77%;
   left: 17%;
 }
@@ -343,24 +335,24 @@ code {
 }
 .star-img14{
   position: absolute;
-  top: 59%;
-  left: 90%;
+  top: 65%;
+  left: 86%;
 }
 .star-img14 .img{
   background-image:  url('img/profile/14.png');
 }
 .star-img15{
   position: absolute;
-  top: 72%;
-  left: 92%;
+  top: 88%;
+  left: 24%;
 }
 .star-img15 .img{
   background-image:  url('img/profile/15.png');
 }
 .star-img16{
   position: absolute;
-  top: 72%;
-  left: 92%;
+  top: 90%;
+  left: 78%;
 }
 .star-img16 .img{
   background-image:  url('img/profile/16.png');
@@ -455,6 +447,12 @@ code {
 .star-img15 .ring{
   animation:ring 2s linear 1s infinite;
 }
+.star-img16 .star{
+  animation:star 4s linear 1s infinite;
+}
+.star-img16 .ring{
+  animation:ring 2s linear 1s infinite;
+}
 .star{
   height: 3px;
   width: 3px;
@@ -502,6 +500,8 @@ code {
   margin-left: 60px;
   margin-top: -83px;
   opacity: 0;
+  transform: rotateX(90deg);
+  transform-origin: top;
   transition:all 0.5s ease-in-out;
   z-index: -1;
 }
@@ -515,6 +515,7 @@ code {
 }
 .imgcontent.active{
   opacity: 1;
+  transform: rotateX(0deg);
 }
 
 @keyframes star{
@@ -596,7 +597,7 @@ code {
   position: absolute;
 }
 .solar-syst div:not(.asteroids-belt):before {
-  box-shadow: inset 0 6px 0 -2px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 6px 0 0 -2px rgba(0, 0, 0, 0.25);
 }
 
 .sun {
@@ -1761,8 +1762,8 @@ code {
   width: 340px;
   border: none;
   position: relative;
-  left: -88px;
-  top: -115px;
+  left: -45px;
+  top: -165px;
 }
 .aster .content .text sup{
   font-size: 10px;
@@ -1783,7 +1784,8 @@ code {
   transform: scale(0.75);
   font-size: 16px;
   transform-origin: right;
-  line-height: 21px;
+  line-height: 1.37;
+  height: 19.8px;
 }
 .aster .content .text .right{
   float: left;
@@ -1803,8 +1805,16 @@ code {
 .aster .content .text .right p:not(.star-name){
   transform: scale(0.75);
   font-size: 16px;
-  transform-origin: left;
-  line-height: 18px;
+  transform-origin: left top;
+  line-height: 1.35;
+  height: 20px;
+}
+.sun .content .text .right p:not(.star-name){
+  transform: scale(0.75);
+  font-size: 16px;
+  transform-origin: left top;
+  line-height: 1.32;
+  height: 20.5px;
 }
 .aster .content .text .right .star-name span{
   vertical-align: sub;
@@ -1814,18 +1824,21 @@ code {
 .aster .content .line1{
   width: 40px;
   height: 0px;
-  border: 1px solid #9e9b9b;
+  border: 1px solid rgba(255,255,255,0.5);
   position: relative;
-  top: 35px;
-  left: -49px;
+  top: -27px;
+  left: -3px;
   transform: rotateZ(-56deg);
 }
 .aster .content .line2{
   width: 35px;
-  border: 1px solid #9e9b9b;
+  border: 1px solid rgba(255,255,255,0.5);
   position: relative;
-  top: 17px;
-  left: -18px;
+  top: -46px;
+  left: 28px;
+}
+.solar-syst .aster.active, .solar-syst .aster:hover{
+  border: 1px solid rgba(102, 166, 229, 0.7);
 }
 .darkbg{
   position: fixed;
@@ -1962,11 +1975,19 @@ code {
   .team{
     display: block;
     width: 100%;
-    margin-top: 100%;
+    /*margin-top: 100%;*/
+  }
+  .team .members:after{
+    clear: both;
+    display: table;
+    content: '';
   }
   .team .intro{
     padding: 0 15px;
     margin-bottom: 20px;
+    font-family: '宋体';
+    font-style: italic;
+    line-height: 18px;
   }
   .team .members .profile{
     display: block;
@@ -1998,7 +2019,7 @@ code {
     color: rgba(255,255,255,0.7);
   }
   .solar-syst .aster .content{
-    display: none;
+    opacity: 0;
   }
   .star-img{
     display: none;
@@ -2008,5 +2029,63 @@ code {
     position: static;
     margin-bottom: -70px;
   }
+  .solar-syst .aster.active, .solar-syst .aster:hover{
+    border: 1px solid rgba(102, 166, 229, 0.24);
+  }
+  .m-footer{
+    display: block;
+    margin-bottom: 15px;
+    margin-top: 30px;
+  }
+  .m-footer #author{
+    text-align: center;
+  }
    
+}
+
+@media(min-width: 768px){
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+   /* overflow-y: scroll;*/
+    -webkit-overflow-scrolling:touch;
+  }
+  .solar-syst div:not(.sun):before {
+    top: 50%;
+    left: 0;
+  }
+  .solar-syst div.asteroids-belt:before {
+    top: 50%;
+    left: 50%;
+  }
+  .saturn:after,.earth:after{
+    top: 50%;
+    left: 0;
+  }
+  .solar-syst .aster .content{
+    top: 50%;
+    left: 0;
+    transform-origin: 0;
+  }
+  .solar-syst .aster.sun .content{
+    top: 10px;
+    left: 30px;
+  }
+  .solar-syst .aster.jupiter .content{
+    left: 0;
+    top: 50%;
+  }
+  .solar-syst .jupiter .content .line1{
+    left: 9px;
+    top: -16px;
+    transform-origin: left;
+    width: 34px;
+  }
+}
+
+@media(max-width: 375px){
+  .team .members .profile img{
+    width: 55px;
+  }
 }

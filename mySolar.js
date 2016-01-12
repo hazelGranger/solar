@@ -30,7 +30,6 @@ $(document).ready(function(){
     e.stopPropagation();
   })
 
-
   $('body').click(function(){
     hideBigStar();
     uneclipse();
@@ -277,15 +276,15 @@ $(document).ready(function(){
   timeUpdateByHour(30);
 
   $('.description .iconfont').click(function(){
-    // var darkbg = $('.darkbg');
-    // var device = $(window);
-    // if (device.width() < 768) {
-    //   return false;
-    // }
-    // darkbg.show();
-    // setTimeout(function(){
-    //   darkbg.css("opacity","1");
-    // }, 100);
+    var darkbg = $('.darkbg');
+    var device = $(window);
+    if (device.width() < 768) {
+      return false;
+    }
+    darkbg.show();
+    setTimeout(function(){
+      darkbg.css("opacity","1");
+    }, 100);
   });
 
   $('.darkbg .close').click(function(){
